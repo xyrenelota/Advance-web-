@@ -5,7 +5,7 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="">-->
+    <link rel="shortcut icon" href="">--->
 
     <title>Moviepedia by Team Soju</title>
 
@@ -26,25 +26,24 @@
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
-
   </head>
 
   <body>
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <!---<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>-->
+          </button>--->
 			<a class="navbar-brand" href="index.html">Moviepedia</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav" id="movieLinks">
-            <li class="active box-office"><a class="box-office"  href="index.html" class = 'link'  onclick = "mode = 'upd'; searchMovie();" >Top Box Office</a></li>
-			<li ><a class="top-rentals" href="top-rentals.html">Top Rentals</a></li>
-            <li ><a  class="in-theaters"href="in-theaters.html">In Theaters</a></li>
+            <li><a class="box-office" href="index.html">Top Box Office</a></li>
+			<li class="active" ><a  class="top-rentals" href="top-rentals.html">Top Rentals</a></li>
+            <li><a  class="in-theaters" href="in-theaters.html">In Theaters</a></li>
            </ul>
 		  <form id="searchForm" method="post" class="pull-right">
 			<input  type="text" id="s" placeholder="Enter Movie Title" class="input-sm"/>
@@ -61,9 +60,9 @@
 
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-9">
-          <!--<p class="pull-right visible-xs">
+         <!-- <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>--->
+          </p>-->
         
      <div id="myCarousel" class="carousel slide">
       <!-- Indicators -->
@@ -108,9 +107,10 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 	
-	 <h3 id="category">Top Box Office</h3>
+	<h3 id="category">Top Rentals</h3>
+	
 	<center><div id="loadto"></div></center>
-	<center><div id="resulta"></div></center><br />
+	<center><div id="resulta"></div></center>
 	
 	<script id="founded-template" type="text/x-handlebars-template">
 		{{#if found}}
@@ -119,15 +119,14 @@
 		<p class="alert alert-danger">No Movie/s Found. <br /><a  class="alert-link"href="index.html"><strong>Reload Page</strong></a></p>
 		
 		{{/if}}
-	
 		
 	</script>
 	
           <div class="row">
-		 
 			<div id="rs" class="" style="display:inline;"></div>
 			<div id="rs2" class="" style="display:inline;"></div>
             <script id="hit-template" type="text/x-handlebars-template">
+
 				<div class="entry col-6 col-sm-6 col-lg-3">
 					
 					<img class="someClass thumbnail"src="{{poster}}">
@@ -138,7 +137,6 @@
 					{{else}}
 					<li>Synopsis Not Available.</li>
 					{{/if}}
-					<ul>
 					{{#if rating}}
 					<li>Audience Rating: {{rating}}</li>
 					{{else}}
@@ -149,42 +147,34 @@
 					
 				</div>
 			</script>
-		
 			 <script id="hit-template3" type="text/x-handlebars-template">
-			
+
 				<div class="entry col-6 col-sm-6 col-lg-3">
 					
-					<img class="someClass thumbnail"src="{{poster}}">
-					<!--<center> <a href=""  class="btn btn-info btn-small">Hide</a> </center>-->
-					<center>
-					<h5>{{title}} ({{year}})</h5>
-			
-				
-					<!--{{#if text}}
+					<a href=""><img class="someClass thumbnail"src="{{poster}}"></a>
+					<h5>{{title}} ({{year}})</h5><br>
+					<!--<ul>
+					{{#if text}}
 					<li> Synopsis: {{text}}</li>
 					{{else}}
 					<li>Synopsis Not Available.</li>
-					{{/if}}-->
-					{{#if rating}}
-					<h6>Audience Rating: {{rating}}</h6>
-					{{else}}
-					<h6>Audience Rating: Not Available</h6>
 					{{/if}}
-					</center>
-				
-				
-			
+					{{#if rating}}
+					<li>Audience Rating: {{rating}}</li>
+					{{else}}
+					<li>Audience Rating: Not Available</li>
+					{{/if}}
+					</ul>-->
 					
 					
 				</div>
 			</script>
-	
 			
 			
           </div><!--/row-->
         </div><!--/span-->
 
-        <div class=" fixed col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="well sidebar-nav">
             <ul class="nav">
               <li>Movies</li>
@@ -206,7 +196,7 @@
 
       <hr>
 
-      <footer class="navbar navbar-inverse navbar-fixed-bottom">
+       <footer class="navbar navbar-inverse navbar-fixed-bottom">
         <center><p style="color:white; margin-top:15px; font-size: 11px; color:#999;">&copy; Moviepedia 2013 <br />Designed & Developed by Team Soju</p></center>
       </footer>
 
@@ -219,7 +209,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
 	<script src="js/jquery.js"></script>
-	<script src="js/jquery.tooltipster.min.js"></script>
 	 <script src="js/app.js"></script>
 	<script src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js"></script>
 	<script src="js/offcanvas.js"></script>
@@ -227,8 +216,8 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript">
-	
-    var url = 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json';
+	var app = {};
+    var url = 'http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json';
 	$('#resulta').append('<img src="css/gif-load.gif" class = \'loading\'>');	
     $.ajax({
         url: url,
@@ -251,9 +240,9 @@
 		rss.append(hitTemplate({title: movie.title, 
 									
 									poster: movie.posters.detailed,
-									year: movie.year,
-									text: movie.synopsis,
-									rating: movie.ratings.audience_rating
+									year: movie.year
+									//text: movie.synopsis,
+									//rating: movie.ratings.audience_rating
 									
 									}));
 		
@@ -264,16 +253,7 @@
     }; 
 	
 	</script>
-	<!--<script type="text/javascript">	$('#hideshow').toggle(function(){
-		$('#hideshow').text('Show');
-		$('#message').hide();
-		},function(){
-		$('#hideshow').text('Hide');
-		$('#message').show();
-		}};
-
-    
-});</script>-->
+	<!-- CALL BLOXHOVER -->
 
  
 <!-- HTML STRUCTURE -->
