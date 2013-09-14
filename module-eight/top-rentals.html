@@ -2,10 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="">--->
 
     <title>Moviepedia by Team Soju</title>
 
@@ -21,25 +17,15 @@
 	 <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>--->
 			<a class="navbar-brand" href="index.html">Moviepedia</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="">
           <ul class="nav navbar-nav" id="movieLinks">
             <li><a class="box-office" href="index.html">Top Box Office</a></li>
 			<li class="active" ><a  class="top-rentals" href="top-rentals.html">Top Rentals</a></li>
@@ -60,9 +46,6 @@
 
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-9">
-         <!-- <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>-->
         
      <div id="myCarousel" class="carousel slide">
       <!-- Indicators -->
@@ -123,73 +106,71 @@
 	</script>
 	
           <div class="row">
-			<div id="rs" class="" style="display:inline;"></div>
-			<div id="rs2" class="" style="display:inline;"></div>
+		  <!--Search-->
+			<div id="rs" class=""></div>
+			
+			<!--top-rentals-->
+			<div id="rs2" class=""></div>
+			
+			<!--Search-->
             <script id="hit-template" type="text/x-handlebars-template">
 
 				<div class="entry col-6 col-sm-6 col-lg-3">
 					
 					<img class="someClass thumbnail"src="{{poster}}">
-					<h5>{{title}} ({{year}})</h5><br>
-					<!--<ul>
-					{{#if text}}
-					<li> Synopsis: {{text}}</li>
-					{{else}}
-					<li>Synopsis Not Available.</li>
-					{{/if}}
+					<center>
+					<h5>{{title}} ({{year}})</h5>
+			
 					{{#if rating}}
-					<li>Audience Rating: {{rating}}</li>
+					<h6>Audience Rating: {{rating}}</h6>
 					{{else}}
-					<li>Audience Rating: Not Available</li>
+					<h6>Audience Rating: Not Available</h6>
 					{{/if}}
-					</ul>-->
+					</center>
 					
 					
 				</div>
+				
+				
 			</script>
+			
+			<!--top-rentals-->
 			 <script id="hit-template3" type="text/x-handlebars-template">
 
 				<div class="entry col-6 col-sm-6 col-lg-3">
 					
-					<a href=""><img class="someClass thumbnail"src="{{poster}}"></a>
-					<h5>{{title}} ({{year}})</h5><br>
-					<!--<ul>
-					{{#if text}}
-					<li> Synopsis: {{text}}</li>
-					{{else}}
-					<li>Synopsis Not Available.</li>
-					{{/if}}
+					<img class="someClass thumbnail"src="{{poster}}">
+					<center>
+					<h5>{{title}} ({{year}})</h5>
+			
 					{{#if rating}}
-					<li>Audience Rating: {{rating}}</li>
+					<h6>Audience Rating: {{rating}}</h6>
 					{{else}}
-					<li>Audience Rating: Not Available</li>
+					<h6>Audience Rating: Not Available</h6>
 					{{/if}}
-					</ul>-->
+					</center>
+					
 					
 					
 				</div>
+			</script>
+			<!--Upcoming-->
+				<script id="hit-template4" type="text/x-handlebars-template">
+					<ol class="nav">
+						<li><a href="#">{{title}}</a></li>
+              
+					</ol>
+				
 			</script>
 			
 			
           </div><!--/row-->
         </div><!--/span-->
-
+		
+		<!--Upcoming-->
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="well sidebar-nav">
-            <ul class="nav">
-              <li>Movies</li>
-              <li class="active"><a href="#">Upcoming</a></li>
-              <li><a href="#">Top Movies</a></li>
-              <li><a href="#">Certified Fresh</a></li>
-              <li>DVD</li>
-              <li><a href="#">Top Rentals</a></li>
-              <li><a href="#">New Releases</a></li>
-              <li><a href="#">Current Releases</a></li>
-              <li>NEWS</li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Guides</a></li>
-			  <li><a href="#">News</a></li>
-            </ul>
+          <div class="well sidebar-nav"id="side">
+            <h4>Upcoming Movies</h4>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
@@ -237,12 +218,12 @@
 		rss.html(""); 
         for (var i = 0; i < movies.length; i++) {
         var movie = movies[i];
-		rss.append(hitTemplate({title: movie.title, 
-									
+		rss.append(hitTemplate({
+									title: movie.title, 
 									poster: movie.posters.detailed,
-									year: movie.year
-									//text: movie.synopsis,
-									//rating: movie.ratings.audience_rating
+									year: movie.year,
+									rating: movie.ratings.audience_rating
+									
 									
 									}));
 		
@@ -253,7 +234,7 @@
     }; 
 	
 	</script>
-	<!-- CALL BLOXHOVER -->
+
 
  
 <!-- HTML STRUCTURE -->
