@@ -1,0 +1,11 @@
+body {
+  font-family: Verdana, Helvetica, sans-serif;
+  background-color: #DDDDDD;
+  color: blue;
+}
+.inputguest{
+width: 200px;
+height: 20px;
+border-radius: 5px;
+}
+
